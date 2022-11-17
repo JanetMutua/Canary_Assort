@@ -16,6 +16,9 @@ fun main(args: Array<String>){
 }
 
 class Implementer{
+
+    //create static functions that are callable from Java
+    //implement / call factory methods
     companion object{
         @JvmStatic
         fun main(args: Array<String>){
@@ -39,7 +42,7 @@ open class Employee(var id:Int = 0, var name:String, var age:Int = 23){
     fun displayDetails(){
         println("Employee records: $name , $id , $age ")
     }
-
+    //calls the singleton of EmployeeJob
     fun addJobDesription(jobType:String){
         val Job = EmployeeJob.allJobDescriptions
             .filter { it.jobName == jobType }
@@ -53,7 +56,7 @@ open class Employee(var id:Int = 0, var name:String, var age:Int = 23){
         override fun toXml(item: Employee){
 
         }
-
+        //factory methods
         fun addUndergrad(name: String): Undergrad{
             return Undergrad(name)
         }
